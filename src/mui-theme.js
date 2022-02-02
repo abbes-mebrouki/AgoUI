@@ -1,3 +1,4 @@
+import { colors } from "@material-ui/core"
 import { createTheme } from "@material-ui/core/styles"
 
 import { theme } from "./tokens-obj"
@@ -45,7 +46,6 @@ const muiOverrides = {
 			height: 40,
 			maxHeight: 40,
 		},
-		
 	},
 	MuiTypography: {
 		root: {
@@ -54,10 +54,37 @@ const muiOverrides = {
 	},
 	MuiTextField: {
 		root: {
-			// margin: 8,
-			height: 56,
-			minHeight: 56,
-			borderRadius: 8,
+			// '& .MuiInputLabel-filled': {
+			// 	color: 'red',
+			// 	"&.Mui-focused": {
+			// 		fontWeight: theme.MdSysTypescaleLabelMediumWeight,
+			// 	},
+			// },
+
+			// "& .MuiInputLabel-animated": {
+			// 	color: "green",
+			// 	"&.Mui-focused": {
+			// 		fontWeight: theme.MdSysTypescaleLabelMediumWeight,
+			// 	},
+			// },
+
+			// "& .MuiInputLabel-root": {
+			// 	paddingLeft: "8px",
+			// 	// fontWeight: theme.MdSysTypescaleLabelMediumWeight,
+			// 	// color: theme.MdSysColorPrimary,
+			// 	"&.Mui-focused": {
+			// 		fontWeight: theme.MdSysTypescaleLabelMediumWeight,
+			// 	},
+			// },
+
+			// "& .MuiInputBase-input": {
+			// 	padding: "25px 16px 8px",
+			// 	borderRadius: 8,
+			// 	border: `2px solid ${theme.MdSysColorPrimary}`,
+			// 	// border: `2px solid ${theme.MdSysColorOutline}`,
+			// 	colors: theme.MdSysColorOnSurface,
+			// 	backgroundColor: theme.MdSysColorSurface,
+			// },
 		},
 	},
 
@@ -73,19 +100,22 @@ const muiProps = {
 	MuiButton: {
 		disableRipple: true,
 		variant: "contained",
-
-		
 	},
 	MuiCheckbox: {
 		disableRipple: true,
 	},
+
 	MuiTextField: {
-		variant: "outlined",
+		variant: "filled",
 		size: "small",
-		InputLabelProps: {
-			shrink: true,
+		InputProps: {
+			disableUnderline: true,
 		},
+		// InputLabelProps: {
+		// 	shrink: true,
+		// },
 	},
+
 	MuiBadge: {
 		overlap: "circle",
 	},
