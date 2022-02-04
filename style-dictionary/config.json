@@ -1,0 +1,27 @@
+{
+	"source": ["./style-dictionary/all-tokens/**/*.json"],
+	"platforms": {
+		"js": {
+      "transformGroup": "js",
+      "prefix": "md",
+			"buildPath": "./src/style-dictionary-dist/js/",
+			"files": [
+				{
+					"destination": "tokens.js",
+					"format": "javascript/es6"
+				}
+			]
+		},
+		"scss": {
+      "transformGroup": "scss",
+      "prefix": "md",
+			"buildPath": "./src/style-dictionary-dist/scss/",
+			"files": [
+				{
+					"destination": "tokens.scss",
+					"format": "scss/variables"
+				}
+			]
+		}
+	}
+}

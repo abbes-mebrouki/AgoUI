@@ -45,11 +45,32 @@ const muiOverrides = {
 			padding: "8px 24px",
 			height: 40,
 			maxHeight: 40,
+			overflow: 'hidden',
+
+			// "&::after": {
+			// 	backgroundColor: 'red',
+			// 	content: '" "',
+			// 	height: "100%",
+			// 	width: "100%",
+			// 	position: 'absolute',
+				
+			// },
+			// "& span":{
+			// 	zIndex: 1
+			// },
+		
+			// "&::before": {
+			// 	backgroundColor: 'red',
+			// }
+
 		},
+
+	
 	},
 	MuiTypography: {
 		root: {
-			margin: "10px 10px 0 10px",
+			// lineHeight: '1px',
+			
 		},
 	},
 	MuiTextField: {
