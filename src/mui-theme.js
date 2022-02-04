@@ -45,7 +45,18 @@ const muiOverrides = {
 			padding: "8px 24px",
 			height: 40,
 			maxHeight: 40,
-			overflow: 'hidden',
+			overflow: "hidden",
+		
+			"&::after": {
+				content: '" "',
+				height: "100%",
+				width: "100%",
+				position: "absolute",
+			},
+
+			"& span": {
+				zIndex: 1,
+			},
 
 			// "&::after": {
 			// 	backgroundColor: 'red',
@@ -53,23 +64,20 @@ const muiOverrides = {
 			// 	height: "100%",
 			// 	width: "100%",
 			// 	position: 'absolute',
-				
+
 			// },
 			// "& span":{
 			// 	zIndex: 1
 			// },
-		
+
 			// "&::before": {
 			// 	backgroundColor: 'red',
 			// }
-
 		},
-
-	
 	},
 	MuiTypography: {
 		root: {
-			// lineHeight: '1px',
+			lineHeight: 'normal!important',
 			
 		},
 	},
@@ -81,14 +89,12 @@ const muiOverrides = {
 			// 		fontWeight: theme.MdSysTypescaleLabelMediumWeight,
 			// 	},
 			// },
-
 			// "& .MuiInputLabel-animated": {
 			// 	color: "green",
 			// 	"&.Mui-focused": {
 			// 		fontWeight: theme.MdSysTypescaleLabelMediumWeight,
 			// 	},
 			// },
-
 			// "& .MuiInputLabel-root": {
 			// 	paddingLeft: "8px",
 			// 	// fontWeight: theme.MdSysTypescaleLabelMediumWeight,
@@ -97,7 +103,6 @@ const muiOverrides = {
 			// 		fontWeight: theme.MdSysTypescaleLabelMediumWeight,
 			// 	},
 			// },
-
 			// "& .MuiInputBase-input": {
 			// 	padding: "25px 16px 8px",
 			// 	borderRadius: 8,

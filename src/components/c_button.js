@@ -8,6 +8,15 @@ export const CButton = styled(Button)`
 	`}
 `
 
+const handelHoverState = (originalColor, hoverColor) => css`
+	&:hover::after {
+		background-color: ${hoverColor};
+	}
+	&:hover {
+		background-color: ${originalColor };
+	}
+`
+
 const HandleVariants = (variant = "filled") => {
 	// eslint-disable-next-line default-case
 	switch (variant) {
@@ -15,27 +24,12 @@ const HandleVariants = (variant = "filled") => {
 			return css`
 				background-color: ${theme.M3SysLightPrimary};
 				color: ${theme.M3SysLightOnPrimary};
-				
 
-				&::after {
-					content: " ";
-					height: 100%;
-					width: 100%;
-					position: absolute;
-				}
-				&:hover::after {
-					background-color: ${theme.M3ReadOnlyLightOnPrimaryOpacity008};
-				}
-				&:hover {
-					background-color: ${theme.M3SysLightPrimary};
-				}
-
-				& span{
-					z-index: 1;
-				}
-
-
-
+				// HOVER STATE
+				${handelHoverState(
+					theme.M3SysLightPrimary,
+					theme.M3ReadOnlyLightOnPrimaryOpacity008
+				)}
 			`
 
 		case "outlined":
@@ -43,39 +37,44 @@ const HandleVariants = (variant = "filled") => {
 				border: 1px solid ${theme.ColorM3SysLightOutline};
 				background-color: unset;
 				color: ${theme.ColorM3SysLightPrimary};
-
-				&:hover {
-					background-color: #f3f1f8;
-				}
+				
+				
+				// HOVER STATE
+				${handelHoverState(
+					theme.M3SysLightSurface,
+					theme.M3ReadOnlyLightPrimaryOpacity008
+				)}
 			`
 		case "tonal":
 			return css`
-				background-color: ${theme.ColorM3SysDarkOnSecondaryContainer};
-				color: ${theme.ColorM3SysLightOnSecondaryContainer};
+				background-color: ${theme.M3SysDarkOnSecondaryContainer};
+				color: ${theme.M3SysLightOnSecondaryContainer};
 
-				&:hover {
-					background-color: ${theme.ColorM3ReadOnlyDarkOnSecondaryContainerOpacity008};
-				}
+				${handelHoverState(
+					theme.M3SysDarkOnSecondaryContainer,
+					theme.M3ReadOnlyLightOnSecondaryContainerOpacity008
+				)}
 			`
 		case "text":
 			return css`
-				background-color: unset;
-				color: ${theme.MdSysColorPrimary};
+				background-color: ${theme.M3SysLightSurface};
+				color: ${theme.M3SysLightPrimary};
 
-				&:hover {
-					background-color: #f3f1f8;
-				}
+				${handelHoverState(
+					theme.M3SysLightSurface,
+					theme.M3ReadOnlyLightPrimaryOpacity008
+				)}
 			`
 		case "elevated":
 			return css`
-				background-color: ${theme.ColorM3ReadOnlyLightSurface10};
+				background-color: ${theme.M3ReadOnlyLightSurface11};
 				color: ${theme.MdSysColorPrimary};
 				box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 
-				&:hover {
-					/* box-shadow: 0 1px 2px rgba(0,0,0, .3); */
-					background-color: "#E8E0EF";
-				}
+				${handelHoverState(
+					theme.M3ReadOnlyLightSurface11,
+					theme.M3ReadOnlyLightSurface21
+				)}
 			`
 	}
 }
